@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MEOW</title>
+
+    <link rel="icon" href= "images/icon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container" id="container1">
+        <div class="cat">
+            <img src="images/cat_body.png" class="body">
+            <img src="images/cat_tail.png" class="tail">
+        </div>
+        <div class="prompt">
+            <img src="images/text.png" class="image">
+            <p class="question" id="question">Will you be my valentine?</p>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="onClick(this)">
+                <img src="images/button.png" alt="Button Image" class="image heart">
+                <div class="text">YES</div>
+            </button>
+            <button class="button" onclick="onClick(this)">
+                <img src="images/button.png" alt="Button Image" class="image heart">
+                <div class="text">NO</div>
+            </button>
+        </div>
+    </div>
+    <div class="container second_container" id="container2">
+        <div class="cats">
+            <img src="images/cat_dancing.png" class="cat_dancing">
+            <img src="images/cat_dancing_black.png" class="cat_dancing">
+        </div>
+        <div class="mes_cont">
+            <img src="images/text_2.png" class="image ui">
+            <p class="mes">Yipee!!!</p>
+        </div>
+    </div>
+</body>
+<script>
+    function onClick(el) {
+        var buttonTextElement = el.querySelector('.text');
+        var currentText = buttonTextElement.textContent;
+        
+        if (currentText === 'NO') {
+            buttonTextElement.textContent = 'YES';
+        }
+        else{
+            var body1 = document.getElementById('container1');
+            var body2 = document.getElementById('container2');
+
+            body1.style.display = 'none';
+            body2.style.display = 'grid';
+        }
+    }
+</script>
+</html>

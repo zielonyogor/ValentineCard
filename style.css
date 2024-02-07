@@ -1,0 +1,177 @@
+@font-face {
+    font-family: myFont;
+    src: url(fonts/MyUglyHandwriting-Regular.otf);
+  }
+
+html {
+    font-family: myFont, sans-serif;
+    color: var(--font);
+    letter-spacing: 1px;
+    font-weight: 900;
+    background-color: var(--background);
+}
+
+:root{
+    --background: #A0CCDA;
+    --font: #320E3B;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.prompt{
+    position: relative;
+    display: inline-block;
+    width: auto; 
+    height: auto; 
+    margin: 80px 0 0 0;
+}
+
+.question{
+    position: absolute;
+    width: 80%;
+    top: 20%;
+    left: 50%;
+    font-size: 74px;
+    transform: translate(-50%, -50%);
+}
+
+.button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px 40px 0;
+}
+
+.button:hover{
+    filter: brightness(0.9);
+}
+
+.heart{
+    animation: bounce_button_anim 5s ease-in-out infinite;
+}
+
+@keyframes bounce_button_anim{
+    0%, 100%{
+        transform: scaleX(1) scaleY(1);
+    }
+    50%{
+        transform: scaleX(0.95) scaleY(0.95);
+    }
+
+}
+
+.image{
+    width: auto;
+    height: auto;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-family: myFont, sans-serif;
+    color: var(--font);
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 56px;
+}
+
+.mes_cont{
+    position: relative;
+    text-align: center;
+    width: auto; 
+    height: auto; 
+    margin-top: 20px;
+}
+
+.ui{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -18%;
+    animation: bounce_button_anim 2s ease-in-out infinite;
+}
+
+.mes{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cat{
+    display:flex;
+    position: relative;
+    margin-bottom: 7em;;
+    left: 46%;
+}
+
+.body {
+    z-index: 3;
+    position: absolute;
+    top: 24px;
+    width:auto;
+    animation: bounce_anim 5s cubic-bezier(0.68, 0, 0.27, 1.2) infinite;
+    transform-origin: bottom;
+}
+
+.tail{
+    z-index: 2;
+    position: absolute;
+    top: 85px;
+    left: 320px;
+    width: auto;
+    transform-origin: top center;
+    animation: tail_anim 5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+    
+}
+
+@keyframes tail_anim {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes bounce_anim {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.95);
+    }
+}
+
+.second_container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mes{
+    font-size: 64px;
+}
+
+.cat_dancing{
+    animation: dance_anim 1.5s steps(1, start) infinite;
+}
+
+@keyframes dance_anim {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+}
